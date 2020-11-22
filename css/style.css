@@ -1,16 +1,16 @@
 /* SE BOOSSTRAP NON E' ATTIVO RICORDA: */
 
-/* *{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-} */
+*{
+  font-family: sans-serif;
+}
 
 /* CSS */
 
 .layout{
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(
     to bottom,
     #009688 0px,
@@ -22,26 +22,31 @@
 
 .app > .row{
   width: 100%;
-  border: 1px solid black;
   padding: 30px 0px;
-  margin: 0px 40px;
+  margin-left: 10px;
 }
 
 /* colonna dove ci sono i contatti e le info degli utenti  */
 .user_interface{
+  min-width: 30vh;
   width: 100%;
   height:90vh;
-  border:1px solid red;
   margin:0;
   padding: 0;
+  border-right: 1px solid #b1b1b1;
+
+
 }
 /* colonna dove avviene la conversazione e ci sono le info dei contatti  */
 .chat{
+  min-width: 50vh;
   width: 100%;
   height:90vh;
-  border:1px solid red;
   margin:0;
   padding: 0;
+  display: inline-block;
+
+
 }
 
 /* funzionalità prima colonna */
@@ -49,32 +54,127 @@
 /* info utente  */
 .user{
   height: 60px;
-  width: 100%;
-  border: 1px solid yellow;
+  width:100%;
+  background-color: #eaeaea;
   margin: 0;
 }
+
+ .user > img{
+  border-radius: 50%;
+  height: 40px;
+  margin-left: 15px;
+}
+
+ .user > h2{
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 5px;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.user_function{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+.user_function > a{
+  height: 15px;
+  color: #b1b1b1;
+  margin-left: 6px;
+  margin-right: 10px;
+}
+
+.user_function > a:hover{
+  color: #009688;
+}
+
 /* messaggio info utente  */
 .allert{
   height: 70px;
   width: 100%;
-  border: 1px solid yellow;
+  background-color: #8edafc;
   margin: 0;
 }
+.img_allert {
+  background-color:white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: 15px;
+}
+.img_allert > i{
+  color:#8edafc;
+}
+
+ .text-allert {
+   margin-left: 5px;
+ }
+
+ .text-allert > h2{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-left: 5px;
+  display: block;
+}
+
+ .text-allert > a{
+     color:#527d93;
+     font-size: 12px;
+     line-height: 12px;
+     font-weight: 400;
+     margin-left: 5px;
+     display: block;
+     text-decoration: underline;
+
+
+ }
+
+
 /* barra di ricerca */
 .search_contact{
   height: 40px;
   width: 100%;
-  border: 1px solid yellow;
+  background-color: #fafafa;
   margin: 0;
 }
+
+.input_box{
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  height: 30px;
+  width: 90%;
+  background-color: white;
+}
+
+.input_box > i{
+  color:#b1b1b1;
+  margin-left:10px;
+  margin-right: 10px;
+}
+
+.input_box > input{
+  font-size: 12px;
+  color:#b1b1b1;
+  border: none;
+  width: 100%;
+}
+
+
 /* lista dei contatti  */
 .contact_list{
   height: calc(100% - 170px);
   overflow: scroll;
   width: 100%;
-  border: 1px solid yellow;
+  background-color: #ffffff;
   margin: 0;
 }
+
+
+
+
 
 /* seconda colonna  */
 /* info contatto */
@@ -82,8 +182,21 @@
 .contact_info{
   height: 60px;
   width: 100%;
-  border: 1px solid yellow;
+  background-color: #eaeaea;
   margin: 0;
+}
+
+.contact_function{
+  line-height: 60px;
+  position: absolute;
+  right: 15px;
+}
+.contact_function > a{
+  color:#b1b1b1;
+  margin-right: 15px;
+}
+.contact_function > a:hover{
+  color: #009688;
 }
 
 /* spazio della chat  */
@@ -91,7 +204,7 @@
   height: calc(100% - 120px);
   overflow: scroll;
   width: 100%;
-  border: 1px solid yellow;
+  background-image: url(../img/mine.jpg);
   margin: 0;
 }
 
@@ -100,6 +213,21 @@
 .chat_input{
   height: 60px;
   width: 100%;
-  border: 1px solid yellow;
+  background-color: #f3eeea;
   margin: 0;
+}
+
+.chat_input > input{
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  font-size: 12px;
+  color:#b1b1b1;
+  padding-left: 20px;
+}
+
+.chat_input > a{
+  color:#b1b1b1;
+  margin: 0px 20px;
 }
