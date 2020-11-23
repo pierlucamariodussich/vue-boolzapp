@@ -64,46 +64,54 @@
                 </div>
               </div>
               <div class="contact_list  d-flex flex-column flex-nowrap justify-content-start "  >
-                <ul v-if="searchInputText != '' ">
-                  <li @click='' v-for='(contact,i) in filtered'>
+                <ul>
+                  <li @click='selectContact(i)'
+                      :class ="contact.chatActive ? 'selected' : '' "
+                      v-for='(contact,i) in filtered'
+                    >
                     <img :src="contact.src" alt="" >
                     <h2> {{contact.name}}  </h2>
                     <hr>
                   </li>
                 </ul>
-                <ul v-else="searchInputText = '' ">
-                  <li @click='' v-for='(contact,i) in contacts'>
-                    <img :src="contact.src" alt="" >
-                    <h2> {{contact.name}}  </h2>
-                    <hr>
-                  </li>
-                </ul>
+
               </div>
 
           </div>
           <div class=" chat col-8">
-              <div class="contact_info" >
-                 <div class="" v-for='(contact,i) in contacts'>
-
+              <div class="contact_info d-flex align-items-center"  >
+                 <div class="contact d-flex align-items-center" v-for='(contact,i) in contacts'>
+                   <img v-if='contact.chatActive === true' :src="contact.src" alt="foto avatar">
+                   <div class="text_contact_info">
+                     <h2 v-if='contact.chatActive === true'> {{contact.name}}</h2>
+                     <span v-if='contact.chatActive === true'>Ultimo accesso  alle {{contact.lastSeen}} </span>
+                   </div>
                  </div>
-                <img v-if='contact.chatActive === true' :src="contact.src" alt="foto avatar">
-                <h2 v-if='contact.chatActive === true'> {{contact.name}}</h2>
-
-                <div class="contact_function ">
+                <div class="contact_function justify-content-end">
                   <a href="#"><i class="fas fa-search fa-lg"></i></a>
                   <a href="#"><i class="fas fa-paperclip fa-lg"></i></a>
                   <a href="#"><i class="fas fa-ellipsis-v fa-lg"></i></a>
                 </div>
               </div>
               <div class="chat_board">
-                <template id="chat_message">
+                <div class="contact_message"
+                      v-for= " (message,i) in getActiveContact().messages">
+                   <p> {{ message.text}}</p>
+                   <span> {{message.date}}</span>
+                </div>
+                <div class="user_message"
+                      v-for= " (message,i) in userMessages">
+                   <p> {{ message.text}}</p>
+                   <span> {{userdate}}</span>
+                </div>
 
-                </template>
+
+
 
               </div>
               <div class="chat_input d-flex align-items-center justify-content-center">
                 <a href="#"><i class="far fa-smile fa-lg"></i></a>
-                <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+                <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model='userMessages'>
                 <a href="#"><i class="fas fa-microphone"></i></a>
 
               </div>
