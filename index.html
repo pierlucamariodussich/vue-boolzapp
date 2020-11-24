@@ -94,16 +94,12 @@
                 </div>
               </div>
               <div class="chat_board ">
-                <div class="contact_message d-flex  align-items-start justify-content-end"
+                <div :class="message.send ? 'user_message' : 'contact_message' " class=" d-flex  align-items-start justify-content-end"
                       v-for= " (message,i) in getActiveContact().messages">
                    <h3> {{ message.text}}</h3>
                    <p > {{message.date}}</p>
                 </div>
-                <div class="user_message"
-                        v-for='(message,i) in userMessages'>
-                   <p> {{ message.text}}</p>
-                   <span> {{message.date}}</span>
-                </div>
+
 
 
 
@@ -115,7 +111,7 @@
                        name=""
                        value=""
                        placeholder="Scrivi un messaggio"
-                       v-model='userMessages'
+                       v-model='userMessage'
                        @keyup.enter =' saveUserMessage'>
                 <a href="#"><i class="fas fa-microphone"></i></a>
 

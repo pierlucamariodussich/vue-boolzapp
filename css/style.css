@@ -309,6 +309,35 @@ hr{
   width: 100%;
 }
 
+.user_message{
+  background-color: white;
+  border-radius: 10px;
+  width: 60%;
+  margin:15px;
+  flex-direction: column;
+}
+
+.user_message > h3{
+  font-size: 15px;
+  color: #060000;
+  text-align: left;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.user_message > p{
+  font-size: 8px;
+  color: #cac8d0;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+
 
 /* barra per scrivere un messaggio  */
 .chat_input{

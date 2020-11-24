@@ -64,23 +64,17 @@ const boolzApp = new Vue ({
     user: loggedUser ,
     searchInputText:'',
     userMessage:'',
-    userMessages:[],
-
-
-
   },
+
   computed:{
     filtered(){
       return this.contacts.filter( e => {
         return e.name.toLowerCase().includes(this.searchInputText)
       })
     }
-
-
-
-
-
   },
+
+
   methods:{
     selectContact(index){
       this.filtered.forEach((contact, i) => {
@@ -92,6 +86,7 @@ const boolzApp = new Vue ({
 
       })
     },
+
     getActiveContact() {
       for (var i = 0; i < this.contacts.length; i++) {
         if (this.contacts[i].chatActive )  {
@@ -100,15 +95,26 @@ const boolzApp = new Vue ({
       }
     },
 
-
     saveUserMessage(){
-      this.userMessages.push(
+      this.getActiveContact().messages.push(
         {
-          text:userMessage,
+          text: this.userMessage,
           date: newdate,
+          send: true,
+        });
+        setTimeout(this.randomMessage, 3000)
 
-                            });
-    }
+    },
 
-  }
+    randomMessage(){
+    this.getActiveContact().messages.push(
+     {
+       text: 'Va bene,ciao',
+       date: newdate,
+       send: false,
+                         });
+ },
+ }
+
+
 })
