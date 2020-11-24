@@ -19,8 +19,8 @@ const contactArray = [
     chatActive: false,
     lastSeen: ' 10.30  del 22/11/2020',
     messages: [{
-                text: '',
-                date: '',
+                text: 'ciao come stai?',
+                date: newdate,
                 send: false,
                 }
               ],
@@ -31,8 +31,8 @@ const contactArray = [
     chatActive: false,
     lastSeen: date.getHours(00)+':'+ date.getMinutes(00),
     messages: [{
-                text: '',
-                date: '',
+                text: 'Sei in ritardo sbrigati!',
+                date: newdate,
                 send: false,
                 }
               ],
@@ -43,8 +43,8 @@ const contactArray = [
     chatActive: false,
     lastSeen: ' 09.30  del 20/11/2020',
     messages: [{
-                text: '',
-                date: '',
+                text: 'mi rispondi !',
+                date: newdate,
                 send: false,
                 }
               ],
@@ -63,7 +63,8 @@ const boolzApp = new Vue ({
     contacts: [...contactArray],
     user: loggedUser ,
     searchInputText:'',
-    userMessages:[s ],
+    userMessage:'',
+    userMessages:[],
 
 
 
@@ -97,6 +98,16 @@ const boolzApp = new Vue ({
           return this.contacts[i];
         }
       }
+    },
+
+
+    saveUserMessage(){
+      this.userMessages.push(
+        {
+          text:userMessage,
+          date: newdate,
+
+                            });
     }
 
   }

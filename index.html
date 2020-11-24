@@ -93,16 +93,16 @@
                   <a href="#"><i class="fas fa-ellipsis-v fa-lg"></i></a>
                 </div>
               </div>
-              <div class="chat_board">
-                <div class="contact_message"
+              <div class="chat_board ">
+                <div class="contact_message d-flex  align-items-start justify-content-end"
                       v-for= " (message,i) in getActiveContact().messages">
-                   <p> {{ message.text}}</p>
-                   <span> {{message.date}}</span>
+                   <h3> {{ message.text}}</h3>
+                   <p > {{message.date}}</p>
                 </div>
                 <div class="user_message"
-                      v-for= " (message,i) in userMessages">
+                        v-for='(message,i) in userMessages'>
                    <p> {{ message.text}}</p>
-                   <span> {{userdate}}</span>
+                   <span> {{message.date}}</span>
                 </div>
 
 
@@ -111,7 +111,12 @@
               </div>
               <div class="chat_input d-flex align-items-center justify-content-center">
                 <a href="#"><i class="far fa-smile fa-lg"></i></a>
-                <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model='userMessages'>
+                <input type="text"
+                       name=""
+                       value=""
+                       placeholder="Scrivi un messaggio"
+                       v-model='userMessages'
+                       @keyup.enter =' saveUserMessage'>
                 <a href="#"><i class="fas fa-microphone"></i></a>
 
               </div>
