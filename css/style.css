@@ -170,7 +170,7 @@
 /* lista dei contatti  */
 .contact_list{
   height: calc(100% - 170px);
-  overflow: scroll;
+  overflow-y:  scroll;
   width: 100%;
   background-color: #ffffff;
   margin: 0;
@@ -273,7 +273,7 @@ hr{
 /* spazio della chat  */
 .chat_board{
   height: calc(100% - 120px);
-  overflow: scroll;
+  overflow-y: scroll;
   width: 100%;
   background-image: url(../img/mine.jpg);
   margin: 0;
@@ -361,4 +361,24 @@ hr{
 .chat_input > a{
   color:#b1b1b1;
   margin: 0px 20px;
+}
+
+.chat_input > button{
+  height: 30px;
+  width:30px;
+  color: white;
+  margin: 0px 20px;
+  border: none;
+  border-radius: 50%;
+  background-color:#3478f6;
+}
+
+.fa-paper-plane{
+
+  transform: rotate(40deg);
+  height: 15px;
+  width:15px;
+
+
+
 }
